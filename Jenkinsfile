@@ -1,9 +1,9 @@
-node ('master'){  
+node ('master'){
  //   def app
     stage('Cloning Git') {
         /* Let's make sure we have the repository cloned to our workspace */
        checkout scm
-    }  
+    }
 
     stage('Build-and-Tag') {
       sh 'echo Build-and-Tag'
@@ -13,15 +13,14 @@ node ('master'){
     }
     stage('Post-to-dockerhub') {
     sh 'echo Post-to-dockerhub'
-  /*   docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
+    /* docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
             app.push("latest") */
         			}
-         }
+    }
     
     stage('Pull-image-server') {
     sh 'echo Pull-image-server'
        /*  sh "docker-compose down"
          sh "docker-compose up -d"	*/
-      }
- 
+    }
 }
