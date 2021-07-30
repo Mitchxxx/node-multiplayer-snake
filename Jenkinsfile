@@ -6,13 +6,13 @@ node ('master'){
     }  
 
     stage('Build-and-Tag') {
-      sh 'echo Build-and-Tag
+      sh 'echo Build-and-Tag'
     /* This builds the actual image; synonymous to
          * docker build on the command line */
      //   app = docker.build("amrit96/snake")
     }
     stage('Post-to-dockerhub') {
-    sh 'echo Post-to-dockerhub
+    sh 'echo Post-to-dockerhub'
   /*   docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
             app.push("latest") */
         			}
