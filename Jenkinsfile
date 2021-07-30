@@ -8,10 +8,10 @@ node ('master'){
     stage('Build-and-Tag') {
     /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.build("mitchxxx/snake:new")
+        app = docker.build("mitchxxx/snake")
     }
     stage('Post-to-dockerhub') {
-     docker.withRegistry('https://registry.hub.docker.com', 'mitchxxx') {
+     docker.withRegistry('https://registry.hub.docker.com', 'docker_creds') {
             app.push("latest")
         			}
     }
