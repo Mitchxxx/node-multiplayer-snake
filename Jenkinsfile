@@ -17,8 +17,8 @@ node ('master'){
             app.push("latest")
         			}
     }
-    stage('SECURITY-IMAGE-SCANNER-Anchore') {
-        build 'SECURITY-IMAGE-SCANNER-Anchore'
+    stage('SECURITY-IMAGESCANNER-Anchore') {
+        build 'SECURITY-IMAGESCANNER-Anchore'
 
     }
     stage('Pull-image-server') {
