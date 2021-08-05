@@ -13,7 +13,7 @@ node ('master'){
         app = docker.build("mitchxxx/snake:new")
     }
     stage('Post-to-dockerhub') {
-     docker.withRegistry('https://registry.hub.docker.com', 'mitchxxx') {
+     docker.withRegistry('https://registry.hub.docker.com', 'docker_creds') {
             app.push("latest")
         			}
     }
