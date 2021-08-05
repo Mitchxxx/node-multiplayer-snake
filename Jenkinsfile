@@ -26,6 +26,6 @@ node ('Ubuntu-app-agent'){
         sh "docker-compose up -d"
     }
     stage('DAST') {
-        build 'SECURITY-DAST-OWASP_ZAP'
+        build 'SECURITY-DAST-Arachni'
     }
 }
